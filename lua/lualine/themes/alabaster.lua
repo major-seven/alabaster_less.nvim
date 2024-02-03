@@ -1,45 +1,40 @@
-local colors
-if vim.o.background == "dark" then
-    colors = {
-        color1 = "#162022",
-        color2 = "#cd974b",
-        color3 = "#cecece",
-        color4 = "#9F9F9F",
-        color5 = "#333333",
-        color6 = "#cc8bc9",
-    }
-else
-    colors = {
-        color1 = "#c9c9c9",
-        color2 = "#cb9000",
-        color3 = "#222222",
-        color4 = "#666666",
-        color5 = "#aaaaaa",
-        color6 = "#7a3e9d",
-    }
-end
+local colors = {
+	color2 = "#2b2b2b",
+	color3 = "#2b2b2b",
+	color4 = "#9F9F9F",
+	color5 = "#333333",
+
+	fg = "#8a8a8a",
+	fg2 = "#b5b5b5",
+	bg = "#2b2b2b",
+	bg_insert = "8a8a8a",
+	bg_symbols = "#38373b",
+	bg_replace = "#b41352",
+	bg_visual = "#8b7ea7",
+	bg_middle = "#8a8a8a",
+}
 
 return {
     replace = {
-        a = { fg = colors.color1, bg = colors.color2, gui = "bold" },
-        b = { fg = colors.color3, bg = colors.color1 },
+        a = { fg = colors.fg2, bg = colors.bg_replace, gui = "bold" },
+        b = { fg = colors.fg, bg = colors.bg_symbols },
     },
     inactive = {
-        a = { fg = colors.color4, bg = colors.color1, gui = "bold" },
-        b = { fg = colors.color4, bg = colors.color1 },
-        c = { fg = colors.color4, bg = colors.color1 },
+        a = { fg = colors.color4, bg = colors.fg2, gui = "bold" },
+        b = { fg = colors.fg, bg = colors.bg_symbols },
+        c = { fg = colors.color3, bg = colors.bg_middle },
     },
     normal = {
-        a = { fg = colors.color3, bg = colors.color5, gui = "bold" },
-        b = { fg = colors.color3, bg = colors.color1 },
-        c = { fg = colors.color3, bg = colors.color1 },
+        a = { fg = colors.fg, bg = colors.bg, gui = "bold" },
+        b = { fg = colors.fg, bg = colors.bg_symbols },
+        c = { fg = colors.color3, bg = colors.bg_middle },
     },
     visual = {
-        a = { fg = colors.color1, bg = colors.color6, gui = "bold" },
-        b = { fg = colors.color3, bg = colors.color1 },
+        a = { fg = colors.bg, bg = colors.bg_visual, gui = "bold" },
+        b = { fg = colors.fg, bg = colors.bg_symbols },
     },
     insert = {
-        a = { fg = colors.color1, bg = colors.color3, gui = "bold" },
-        b = { fg = colors.color3, bg = colors.color1 },
+        a = { fg = colors.bg, bg = colors.bg_insert, gui = "bold" },
+        b = { fg = colors.fg, bg = colors.bg_symbols },
     },
 }
